@@ -1,0 +1,128 @@
+name: Transfer verified publication archive to Zenodo
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: zenodo-publication-transfer
+  cancel-in-progress: false
+jobs:
+  transfer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Reassemble and verify the complete archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PYTHON'
+          """Copy and verify archive bytes only; never extract or execute research code."""
+          from pathlib import Path
+          import concurrent.futures,hashlib,json,re,subprocess
+
+          REPO='lhassa8/replicate'
+          RELEASE_ID=416663424
+          EXPECTED_SHA='4e28530f599772f7fb904cb9defa59892b81534405b04aaf679236f0df1ab3f5'
+          EXPECTED_MD5='7de53cf1c056332f58503e3ff2add14c'
+          EXPECTED_BYTES=5854676687
+          release=json.loads(subprocess.check_output(['gh','api',f'repos/{REPO}/releases/{RELEASE_ID}']))
+          assert release['draft'] is True and release['published_at'] is None
+          assets={a['name']:a for a in release['assets']}
+          directory=Path('transfer');directory.mkdir()
+          def get_asset(name):
+              asset=assets[name]
+              path=directory/name
+              with path.open('wb') as f:
+                  subprocess.run(['gh','api',f'repos/{REPO}/releases/assets/{asset["id"]}',
+                                  '-H','Accept: application/octet-stream'],stdout=f,check=True)
+              return path
+          manifest=json.loads(get_asset('transfer-manifest.json').read_text())
+          assert manifest['sha256']==EXPECTED_SHA and manifest['md5']==EXPECTED_MD5
+          assert manifest['bytes']==EXPECTED_BYTES and len(manifest['parts'])==88
+          assert manifest['archive']=='replicate-publication-20261018-v2.zip'
+          for i,part in enumerate(manifest['parts']):
+              assert part['name']==f'archive.part{i:03d}'
+              assert assets[part['name']]['size']==part['bytes']
+              assert assets[part['name']]['digest']=='sha256:'+part['sha256']
+          def download(part):
+              path=get_asset(part['name'])
+              assert path.stat().st_size==part['bytes']
+              assert hashlib.sha256(path.read_bytes()).hexdigest()==part['sha256']
+              return path.name
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+              for i,name in enumerate(pool.map(download,manifest['parts']),1):
+                  print(f'Verified transport part {i}/88',flush=True)
+          sha=hashlib.sha256();md5=hashlib.md5();count=0
+          archive=Path(manifest['archive'])
+          with archive.open('wb') as out:
+              for part in manifest['parts']:
+                  path=directory/part['name']
+                  with path.open('rb') as src:
+                      for block in iter(lambda:src.read(8*1024*1024),b''):
+                          out.write(block);sha.update(block);md5.update(block);count+=len(block)
+                  path.unlink()
+          assert count==EXPECTED_BYTES and sha.hexdigest()==EXPECTED_SHA and md5.hexdigest()==EXPECTED_MD5
+          print(json.dumps({'archive_reassembled_and_verified':True,'bytes':count,'sha256':sha.hexdigest(),'md5':md5.hexdigest()}),flush=True)
+          PYTHON
+      - name: Upload one ZIP directly to Zenodo
+        env:
+          ZENODO_TRANSFER_TOKEN: ${{ secrets.ZENODO_TRANSFER_TOKEN }}
+        run: |
+          python3 - <<'PYTHON'
+          """Upload one verified archive to the authorized Zenodo draft; do not publish."""
+          from pathlib import Path
+          from urllib.request import Request,build_opener,HTTPRedirectHandler
+          from urllib.parse import urlparse
+          from urllib.error import HTTPError
+          import hashlib,json,os,subprocess
+
+          TOKEN=os.environ['ZENODO_TRANSFER_TOKEN']
+          assert TOKEN and not any(c.isspace() for c in TOKEN)
+          ARCHIVE=Path('replicate-publication-20261018-v2.zip')
+          SIZE=5854676687
+          MD5='7de53cf1c056332f58503e3ff2add14c'
+          assert ARCHIVE.stat().st_size==SIZE
+          BASE='https://zenodo.org/api/records/23454911/draft/files'
+          class NoRedirect(HTTPRedirectHandler):
+              def redirect_request(self,*args,**kwargs):return None
+          opener=build_opener(NoRedirect)
+          def call(method,url,data=None):
+              parsed=urlparse(url)
+              assert parsed.scheme=='https' and parsed.netloc=='zenodo.org' and not parsed.query
+              headers={'Authorization':'Bearer '+TOKEN,'Accept':'application/vnd.inveniordm.v1+json'}
+              body=None
+              if data is not None:body=json.dumps(data).encode();headers['Content-Type']='application/json'
+              try:
+                  with opener.open(Request(url,data=body,headers=headers,method=method),timeout=180) as r:
+                      b=r.read();return json.loads(b) if b else {}
+              except HTTPError as e:
+                  raise RuntimeError(f'Zenodo HTTP {e.code}: '+e.read(1500).decode(errors='replace').replace(TOKEN,'[redacted]')) from None
+          def main():
+              entries=call('GET',BASE)['entries']
+              current=next((e for e in entries if e['key']==ARCHIVE.name),None)
+              if current and current['status']=='completed':
+                  assert current['size']==SIZE and current['checksum']=='md5:'+MD5
+                  print('The matching complete ZIP is already on Zenodo.');return
+              if current:
+                  raise RuntimeError('An incomplete entry exists; inspect it before restarting the transfer.')
+              initialized=call('POST',BASE,[{'key':ARCHIVE.name}])
+              entry=next(e for e in initialized['entries'] if e['key']==ARCHIVE.name)
+              url=entry['links']['content'];parsed=urlparse(url)
+              assert parsed.scheme=='https' and parsed.netloc=='zenodo.org' and not parsed.query
+              config='header = '+json.dumps('Authorization: Bearer '+TOKEN)+'\n'
+              response=Path('zenodo-response.json')
+              proc=subprocess.run(['curl','--config','-','--request','PUT','--fail-with-body',
+                  '--connect-timeout','30','--max-time','3000','--header','Content-Type: application/octet-stream',
+                  '--header','Accept: application/vnd.inveniordm.v1+json','--header','Expect:',
+                  '--upload-file',str(ARCHIVE),'--output',str(response),
+                  '--write-out','HTTP %{http_code}; bytes %{size_upload}; seconds %{time_total}; speed %{speed_upload}\n',url],
+                  input=config,text=True,capture_output=True)
+              print(proc.stdout.replace(TOKEN,'[redacted]'))
+              if proc.returncode:
+                  raise RuntimeError('Upload failed: '+proc.stderr[-1200:].replace(TOKEN,'[redacted]'))
+              final=call('POST',entry['links']['commit'])
+              assert final['status']=='completed' and final['size']==SIZE and final['checksum']=='md5:'+MD5
+              print(json.dumps({'zenodo_draft':23454911,'single_zip_verified':True,'bytes':SIZE,'md5':MD5,'published':False}),flush=True)
+          try:main()
+          except Exception as e:raise SystemExit(str(e).replace(TOKEN,'[redacted]'))
+          PYTHON
