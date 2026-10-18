@@ -7,9 +7,22 @@ owner-prepared receivers. Each admitted parent supplies a complete signed
 software package and local model. Its child repeats the operation after the
 seed is removed.
 
+**[One-page overview](overview/replicate-overview.pdf)** ·
+**[Short sharing blurb](overview/replicate-share-blurb.txt)** ·
 **[Read the paper](paper/replicate.pdf)** ·
 **[LaTeX source](paper/replicate.tex)** ·
 **[arXiv source archive](submission/arxiv-source.zip)**
+
+## Original motivation
+
+The starting idea was a factory floor with hundreds of connected machines.
+Authorized peers would supply newly installed devices with the current local
+inference engine and supporting software. A self-healing mesh would distribute
+approved updates and restore service without relying on an always-on central
+orchestrator. The [short overview](overview/replicate-overview.pdf) explains
+that vision and the bounded replication milestone demonstrated here. Large
+populations, automatic version updates, and cooperative fault recovery remain
+future work.
 
 ## What the experiments establish
 
@@ -48,6 +61,7 @@ citations to its package-relative files.
 
 ## Repository layout
 
+- `overview/`: shareable one-page introduction, editable text, and short blurb.
 - `paper/`: current manuscript and standalone LaTeX source.
 - `submission/`: source upload ZIP, abstract, and submission metadata.
 - `reproduction/src/organism/`: application, auditors, and research programs.

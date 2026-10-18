@@ -1,0 +1,29 @@
+Replicate: Bounded Self-Replication
+
+From a factory-floor idea to a measured software result
+
+Lars Tray | Georgetown University | October 18, 2026
+
+The original idea
+
+Imagine a factory floor with hundreds of connected machines, each with modest processing power. When a new machine is installed, why should it require a separate, centrally managed deployment of the intelligence already running elsewhere on the floor?
+
+Replicate began with the idea of a self-healing mesh: authorized peers would bring new machines into service by supplying the current inference model and its supporting software. Each participating device would run inference locally. Peers would distribute approved updates and help restore service when devices failed or returned, without depending on an always-on central orchestrator whose loss could halt deployment and recovery.
+
+The aim is a network that can maintain and extend its own software capability under its owner's control. Here, "self-replication" means establishing another working software agent, including its local inference engine. "Bounded" means that reproduction stays within approved devices, resource limits, and administrative authority.
+
+What the paper demonstrates
+
+The current study tests a foundational step toward that vision: can a complete agent establish a working descendant, and can that descendant repeat the process after the original seed has been removed?
+
+On prepared 8 GiB x86-64 Linux guests, three seed-child-grandchild lineages completed six births using a locally running model. Parents supplied the signed package and model assets; descendants ran their own inference and diagnostics. The two surviving descendants of the final trial continued periodic work for two hours.
+
+A separate cohosted comparison also completed the tested replication lifecycle using fixed rules and zero model calls. This establishes that model reasoning was not necessary for that lifecycle. The contribution is a demonstrated, auditable replication loop and evidence that separates replication success from the value of model-driven decisions.
+
+From this milestone to the larger network
+
+A factory-scale, self-healing mesh remains the engineering goal. The experiments do not yet establish operation across hundreds of devices, automatic version updates, recovery from network partitions or later peer failures, or deployment on low-memory industrial controllers. The owner still prepares and enrolls receivers; the study does not establish the absence of every central dependency or failure point.
+
+The next steps are to test authorized onboarding and update rollout, recovery when peers or links fail, concurrent replication, and sustained operation on representative hardware. Those tests would connect the demonstrated replication mechanism to the original ambition: distributed intelligence that can grow and recover with the machines it serves.
+
+Read the paper and explore the source: https://github.com/lhassa8/replicate
