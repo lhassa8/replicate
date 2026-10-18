@@ -7,8 +7,8 @@ Affiliation: Georgetown University
 Suggested primary category: cs.AI
 Cross-list: none prepared
 Author-selected manuscript license: CC BY 4.0
-Comments: 27 pages, 2 figures, 12 tables. Reproducibility package supplied separately.
-Public repository or DOI: https://github.com/lhassa8/replicate
+Comments: 27 pages, 2 figures, 12 tables. Complete research archive: https://doi.org/10.5281/zenodo.23454911.
+Public repository or DOI: https://doi.org/10.5281/zenodo.23454911
 Submission status: not submitted
 
 Abstract:

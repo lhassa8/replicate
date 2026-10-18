@@ -50,8 +50,9 @@ carried runtimes, signed payloads, experiment records, historical attempts,
 third-party notices, corresponding sources, and integrity manifests belong
 to the complete reproduction archive.
 
-**Zenodo deposit: being prepared; the public record and DOI will be linked here
-when available.** No arXiv submission has been made through this repository.
+**[Download the complete research archive](https://doi.org/10.5281/zenodo.23454911)** · DOI: `10.5281/zenodo.23454911`
+
+No arXiv submission has been made through this repository.
 
 The [reproduction guide](reproduction/README.md) describes the complete archive.
 Its asset and evidence paths resolve in that archive; they are intentionally
@@ -76,8 +77,7 @@ that all listed qualifications were completed.
 
 ## Citation and licenses
 
-Use [CITATION.cff](CITATION.cff) for the author and manuscript title. The archive
-DOI and any later arXiv identifier will be added once assigned.
+Use [CITATION.cff](CITATION.cff) for the author and manuscript title. The complete archive DOI is [10.5281/zenodo.23454911](https://doi.org/10.5281/zenodo.23454911). An arXiv identifier has not yet been assigned.
 
 Original code is Apache-2.0. The manuscript and original authored data are
 CC-BY-4.0. Third-party materials retain their own terms; see

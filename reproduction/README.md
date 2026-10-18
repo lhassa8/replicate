@@ -4,7 +4,7 @@ Lars Tray, Georgetown University
 October 18, 2026
 
 This package accompanies the final manuscript in `../paper/replicate.pdf`.
-It contains no claim of public posting or replication by an unaffiliated researcher. The paper source, experiment inputs, model files, runtimes, recorded
+The source companion is https://github.com/lhassa8/replicate; the archive DOI is https://doi.org/10.5281/zenodo.23454911. No replication by an unaffiliated researcher is asserted. The paper source, experiment inputs, model files, runtimes, recorded
 outcomes, failed attempts, and reconstruction programs are included.
 
 The synthetic diagnostic result is **40/40 trained, 32/40 stock, and 40/40 fixed

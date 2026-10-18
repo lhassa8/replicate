@@ -1,0 +1,12 @@
+{
+  "archive": "replicate-publication-20261018-v2.zip",
+  "bytes": 5854676687,
+  "sha256": "4e28530f599772f7fb904cb9defa59892b81534405b04aaf679236f0df1ab3f5",
+  "md5": "7de53cf1c056332f58503e3ff2add14c",
+  "files_verified": 3117,
+  "complete_inventory_match": true,
+  "unix_modes_match": true,
+  "sha256_file_identities_match": true,
+  "research_code_executed": false,
+  "new_experiments": false
+}
