@@ -1,0 +1,101 @@
+{
+  "schema": "replicate-native-control-timings-v1",
+  "inputs": {
+    "audit": {
+      "bytes": 15711,
+      "sha256": "effa8890560d25ef1d5ee92e31afb198fb03823f747399074a47f5859e396598"
+    },
+    "description": {
+      "bytes": 22489,
+      "sha256": "07c1d4297613f1baea024bada31037fa74c0deac7d6028628c62689593f9fa72"
+    }
+  },
+  "diagnostic_timing_boundary": "application RPC and polling, identical owner code for all arms",
+  "readiness_timing_boundary": "owner enable to useful readiness, including transfer and activation",
+  "memory_measurement_boundary": "largest reported per-application service-group MemoryPeak",
+  "whole_host_memory_claimed": false,
+  "attempted_lineages_per_arm": 1,
+  "shared_host": true,
+  "inferential_statistics_claimed": false,
+  "arms": {
+    "fixed-policy": {
+      "diagnostics_by_individual": {
+        "seed": {
+          "reconstructed_cases": 5,
+          "passed": 5,
+          "median_seconds": 0.04012525799998912
+        },
+        "child": {
+          "reconstructed_cases": 5,
+          "passed": 5,
+          "median_seconds": 0.0411963309999237
+        },
+        "grandchild": {
+          "reconstructed_cases": 5,
+          "passed": 5,
+          "median_seconds": 0.03973666600006709
+        }
+      },
+      "owner_enable_to_useful_ready_seconds": {
+        "seed": 121.132687,
+        "child": 134.912292,
+        "grandchild": 186.352136
+      },
+      "largest_reported_application_memory_peak_bytes": 1198260224,
+      "largest_reported_application_memory_peak_GiB": 1.115966796875,
+      "complete_lineage_reconstructed": true
+    },
+    "stock-control": {
+      "diagnostics_by_individual": {
+        "seed": {
+          "reconstructed_cases": 5,
+          "passed": 5,
+          "median_seconds": 50.73974787800012
+        },
+        "child": {
+          "reconstructed_cases": 0,
+          "passed": 0,
+          "median_seconds": null
+        },
+        "grandchild": {
+          "reconstructed_cases": 0,
+          "passed": 0,
+          "median_seconds": null
+        }
+      },
+      "owner_enable_to_useful_ready_seconds": {
+        "seed": 189.811515
+      },
+      "largest_reported_application_memory_peak_bytes": 1490137088,
+      "largest_reported_application_memory_peak_GiB": 1.3877983093261719,
+      "complete_lineage_reconstructed": false
+    },
+    "trained-merged": {
+      "diagnostics_by_individual": {
+        "seed": {
+          "reconstructed_cases": 5,
+          "passed": 5,
+          "median_seconds": 50.98398338900006
+        },
+        "child": {
+          "reconstructed_cases": 5,
+          "passed": 5,
+          "median_seconds": 50.325956959999985
+        },
+        "grandchild": {
+          "reconstructed_cases": 5,
+          "passed": 5,
+          "median_seconds": 50.7916992280002
+        }
+      },
+      "owner_enable_to_useful_ready_seconds": {
+        "seed": 187.905328,
+        "child": 261.783678,
+        "grandchild": 222.470492
+      },
+      "largest_reported_application_memory_peak_bytes": 4369199104,
+      "largest_reported_application_memory_peak_GiB": 4.069133758544922,
+      "complete_lineage_reconstructed": true
+    }
+  }
+}

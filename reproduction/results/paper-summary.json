@@ -1,0 +1,568 @@
+{
+  "schema": "replicate-paper-descriptive-tables-v1",
+  "source_results": {
+    "holdout": {
+      "bytes": 42246,
+      "sha256": "9997dec101e8f04540870ea4c2de575fdddceadc30da4db4d11898df44a1f2c2"
+    },
+    "mutations": {
+      "bytes": 38948,
+      "sha256": "92a0f296e91c1571bbe011a36569727acccb42d5139f4f2c79fe07106ef54293"
+    },
+    "controls": {
+      "bytes": 15711,
+      "sha256": "effa8890560d25ef1d5ee92e31afb198fb03823f747399074a47f5859e396598"
+    }
+  },
+  "statistical_inference_claimed": false,
+  "holdout": {
+    "fixed-policy": {
+      "successes": 40,
+      "planned_cases": 40,
+      "by_family": {
+        "compact-celsius": 10,
+        "escaped-array-scaled": 10,
+        "nested-kelvin": 10,
+        "register-fahrenheit": 10
+      },
+      "failure_conditions": {},
+      "all_case_seconds": {
+        "n": 40,
+        "minimum": 0.0006724580307491124,
+        "median": 0.0007229374896269292,
+        "maximum": 0.0011700000031851232,
+        "sum": 0.03018470510141924
+      },
+      "model_calls": 0,
+      "tool_calls": 160,
+      "timing_boundary": "solver only"
+    },
+    "stock-control": {
+      "successes": 32,
+      "planned_cases": 40,
+      "by_family": {
+        "compact-celsius": 8,
+        "escaped-array-scaled": 8,
+        "nested-kelvin": 8,
+        "register-fahrenheit": 8
+      },
+      "failure_conditions": {
+        "below": 4,
+        "above": 4
+      },
+      "all_case_seconds": {
+        "n": 40,
+        "minimum": 27.617831250012387,
+        "median": 30.289566041494254,
+        "maximum": 49.19000075000804,
+        "sum": 1300.9907665378414
+      },
+      "model_calls": 203,
+      "tool_calls": 164,
+      "timing_boundary": "application RPC and polling"
+    },
+    "trained-merged": {
+      "successes": 40,
+      "planned_cases": 40,
+      "by_family": {
+        "compact-celsius": 10,
+        "escaped-array-scaled": 10,
+        "nested-kelvin": 10,
+        "register-fahrenheit": 10
+      },
+      "failure_conditions": {},
+      "all_case_seconds": {
+        "n": 40,
+        "minimum": 27.863544249965344,
+        "median": 29.79065979149891,
+        "maximum": 46.34856654203031,
+        "sum": 1250.5783649998484
+      },
+      "model_calls": 201,
+      "tool_calls": 161,
+      "timing_boundary": "application RPC and polling"
+    }
+  },
+  "controls": {
+    "host_failure": null,
+    "inputs_verified_by_worker": true,
+    "arms": [
+      {
+        "arm": "fixed-policy",
+        "reported_failure": null,
+        "tasks": [
+          {
+            "slot": "seed",
+            "case_id": "equipment-1fa33896ae9d4e004532",
+            "passed": true,
+            "seconds": 0.04016453700000966,
+            "model_calls": 0,
+            "tool_calls": 4
+          },
+          {
+            "slot": "seed",
+            "case_id": "equipment-8b03148da60fae0ba426",
+            "passed": true,
+            "seconds": 0.04000735500000019,
+            "model_calls": 0,
+            "tool_calls": 4
+          },
+          {
+            "slot": "seed",
+            "case_id": "equipment-e3057c62fda8c6220eb2",
+            "passed": true,
+            "seconds": 0.04012525799998912,
+            "model_calls": 0,
+            "tool_calls": 4
+          },
+          {
+            "slot": "seed",
+            "case_id": "equipment-f09ba9b7d83a06321526",
+            "passed": true,
+            "seconds": 0.03960527499998534,
+            "model_calls": 0,
+            "tool_calls": 4
+          },
+          {
+            "slot": "seed",
+            "case_id": "equipment-893b7477a31a53821d56",
+            "passed": true,
+            "seconds": 0.041270831000019825,
+            "model_calls": 0,
+            "tool_calls": 4
+          },
+          {
+            "slot": "child",
+            "case_id": "equipment-1fa33896ae9d4e004532",
+            "passed": true,
+            "seconds": 0.03950645500003702,
+            "model_calls": 0,
+            "tool_calls": 4
+          },
+          {
+            "slot": "child",
+            "case_id": "equipment-8b03148da60fae0ba426",
+            "passed": true,
+            "seconds": 0.053863484999965294,
+            "model_calls": 0,
+            "tool_calls": 4
+          },
+          {
+            "slot": "child",
+            "case_id": "equipment-e3057c62fda8c6220eb2",
+            "passed": true,
+            "seconds": 0.04377110999996603,
+            "model_calls": 0,
+            "tool_calls": 4
+          },
+          {
+            "slot": "child",
+            "case_id": "equipment-f09ba9b7d83a06321526",
+            "passed": true,
+            "seconds": 0.03935414500006118,
+            "model_calls": 0,
+            "tool_calls": 4
+          },
+          {
+            "slot": "child",
+            "case_id": "equipment-893b7477a31a53821d56",
+            "passed": true,
+            "seconds": 0.0411963309999237,
+            "model_calls": 0,
+            "tool_calls": 4
+          },
+          {
+            "slot": "grandchild",
+            "case_id": "equipment-1fa33896ae9d4e004532",
+            "passed": true,
+            "seconds": 0.045130205000077694,
+            "model_calls": 0,
+            "tool_calls": 4
+          },
+          {
+            "slot": "grandchild",
+            "case_id": "equipment-8b03148da60fae0ba426",
+            "passed": true,
+            "seconds": 0.04023908700003176,
+            "model_calls": 0,
+            "tool_calls": 4
+          },
+          {
+            "slot": "grandchild",
+            "case_id": "equipment-e3057c62fda8c6220eb2",
+            "passed": true,
+            "seconds": 0.03927411500001199,
+            "model_calls": 0,
+            "tool_calls": 4
+          },
+          {
+            "slot": "grandchild",
+            "case_id": "equipment-f09ba9b7d83a06321526",
+            "passed": true,
+            "seconds": 0.03960204600002726,
+            "model_calls": 0,
+            "tool_calls": 4
+          },
+          {
+            "slot": "grandchild",
+            "case_id": "equipment-893b7477a31a53821d56",
+            "passed": true,
+            "seconds": 0.03973666600006709,
+            "model_calls": 0,
+            "tool_calls": 4
+          }
+        ],
+        "births": [
+          {
+            "parent_device_id": "a056b2af3363a62e92523fc971914b58b592c0abadd84f30d2afb387ae1bf1d5",
+            "child_device_id": "ab2195610373e8fd2378ce6634aaf1b71fb528971f42ce2669b770a6bef0bbe4",
+            "operation_id": "4689763521a442b2bc3471ad9003c6e4",
+            "decision": {
+              "model_calls": 0,
+              "tool_calls": 2,
+              "choice": {
+                "action": "establish",
+                "platform": "linux-x86_64",
+                "evidence_id": "7fc410f63e4a0ae4b033e1c1ae777213973c527f5282ce983fe6041f4598e9ca",
+                "device_id": "ab2195610373e8fd2378ce6634aaf1b71fb528971f42ce2669b770a6bef0bbe4",
+                "observed_revision": 2,
+                "release_id": "58ce0559577d796b45e7ab23baacc7e51646ec38c9695612c766fc0696c6924c"
+              },
+              "decision_sha256": "f98eebbbc08852f4e340372cbb15a0471e875d97e2e5c67ebf26a3a6d6fb815f",
+              "receiver_inspection_verified": true,
+              "original_model_predicate_rejected": true
+            },
+            "discovery_records": 572,
+            "reproduction_transitions": 205,
+            "transfer": {
+              "components": 11,
+              "bytes": 2861108146,
+              "complete_package_received": true,
+              "retained_failed_attempts": []
+            },
+            "external_cloud_and_resource_admission_required": true,
+            "qualification_passed": false,
+            "fixed_choice_and_peer_history_reconstructed": true
+          },
+          {
+            "parent_device_id": "ab2195610373e8fd2378ce6634aaf1b71fb528971f42ce2669b770a6bef0bbe4",
+            "child_device_id": "a8644720dcf7a62a5ab1f1fadf1f981e53ea7365c235f19e291043770b15ba79",
+            "operation_id": "0652c77ed3a54eb8a3b5c6afbb4754b4",
+            "decision": {
+              "model_calls": 0,
+              "tool_calls": 2,
+              "choice": {
+                "action": "establish",
+                "platform": "linux-x86_64",
+                "evidence_id": "c49d0f610b60de13802e700db2d52252c91f5a6e352b07f3004b3c28ec8a4d23",
+                "device_id": "a8644720dcf7a62a5ab1f1fadf1f981e53ea7365c235f19e291043770b15ba79",
+                "observed_revision": 2,
+                "release_id": "58ce0559577d796b45e7ab23baacc7e51646ec38c9695612c766fc0696c6924c"
+              },
+              "decision_sha256": "0e19330f2f567d3f5409458520417e5863e1c280e8a1859fb4fe30cee7face78",
+              "receiver_inspection_verified": true,
+              "original_model_predicate_rejected": true
+            },
+            "discovery_records": 930,
+            "reproduction_transitions": 303,
+            "transfer": {
+              "components": 11,
+              "bytes": 2861108146,
+              "complete_package_received": true,
+              "retained_failed_attempts": []
+            },
+            "external_cloud_and_resource_admission_required": true,
+            "qualification_passed": false,
+            "fixed_choice_and_peer_history_reconstructed": true
+          }
+        ],
+        "validation_failure": null,
+        "successful_tasks": 15,
+        "planned_tasks": 15,
+        "recorded_diagnostic_cases": 15,
+        "unrecorded_planned_cases": 0,
+        "reconstructed_diagnostic_cases": 15,
+        "reconstructed_failed_tasks": 0,
+        "complete_lineage_reconstructed": true,
+        "median_case_seconds": 0.04012525799998912,
+        "diagnostic_model_calls": 0,
+        "largest_reported_application_memory_peak_bytes": 1198260224,
+        "separate_machine_independence_claimed": false
+      },
+      {
+        "arm": "stock-control",
+        "reported_failure": "TimeoutError: Original 20-minute birth allowance exhausted",
+        "tasks": [
+          {
+            "slot": "seed",
+            "case_id": "equipment-1fa33896ae9d4e004532",
+            "passed": true,
+            "seconds": 75.00792458000001,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "seed",
+            "case_id": "equipment-8b03148da60fae0ba426",
+            "passed": true,
+            "seconds": 52.44989848599994,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "seed",
+            "case_id": "equipment-e3057c62fda8c6220eb2",
+            "passed": true,
+            "seconds": 50.73974787800012,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "seed",
+            "case_id": "equipment-f09ba9b7d83a06321526",
+            "passed": true,
+            "seconds": 50.57461477700008,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "seed",
+            "case_id": "equipment-893b7477a31a53821d56",
+            "passed": true,
+            "seconds": 50.42678476900005,
+            "model_calls": 5,
+            "tool_calls": 4
+          }
+        ],
+        "births": [],
+        "validation_failure": "AuditError: No useful individual: child",
+        "successful_tasks": 5,
+        "planned_tasks": 15,
+        "recorded_diagnostic_cases": 5,
+        "unrecorded_planned_cases": 10,
+        "reconstructed_diagnostic_cases": 5,
+        "reconstructed_failed_tasks": 0,
+        "complete_lineage_reconstructed": false,
+        "median_case_seconds": 50.73974787800012,
+        "diagnostic_model_calls": 25,
+        "largest_reported_application_memory_peak_bytes": 1490137088,
+        "separate_machine_independence_claimed": false
+      },
+      {
+        "arm": "trained-merged",
+        "reported_failure": null,
+        "tasks": [
+          {
+            "slot": "seed",
+            "case_id": "equipment-1fa33896ae9d4e004532",
+            "passed": true,
+            "seconds": 73.06795218000025,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "seed",
+            "case_id": "equipment-8b03148da60fae0ba426",
+            "passed": true,
+            "seconds": 47.82377548300019,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "seed",
+            "case_id": "equipment-e3057c62fda8c6220eb2",
+            "passed": true,
+            "seconds": 50.98398338900006,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "seed",
+            "case_id": "equipment-f09ba9b7d83a06321526",
+            "passed": true,
+            "seconds": 51.62921987999971,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "seed",
+            "case_id": "equipment-893b7477a31a53821d56",
+            "passed": true,
+            "seconds": 50.0167623479997,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "child",
+            "case_id": "equipment-1fa33896ae9d4e004532",
+            "passed": true,
+            "seconds": 72.84563742,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "child",
+            "case_id": "equipment-8b03148da60fae0ba426",
+            "passed": true,
+            "seconds": 48.14112276299966,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "child",
+            "case_id": "equipment-e3057c62fda8c6220eb2",
+            "passed": true,
+            "seconds": 51.83071273399992,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "child",
+            "case_id": "equipment-f09ba9b7d83a06321526",
+            "passed": true,
+            "seconds": 50.325956959999985,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "child",
+            "case_id": "equipment-893b7477a31a53821d56",
+            "passed": true,
+            "seconds": 49.749327384000026,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "grandchild",
+            "case_id": "equipment-1fa33896ae9d4e004532",
+            "passed": true,
+            "seconds": 73.01934735900022,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "grandchild",
+            "case_id": "equipment-8b03148da60fae0ba426",
+            "passed": true,
+            "seconds": 47.612309621999884,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "grandchild",
+            "case_id": "equipment-e3057c62fda8c6220eb2",
+            "passed": true,
+            "seconds": 51.522014865000074,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "grandchild",
+            "case_id": "equipment-f09ba9b7d83a06321526",
+            "passed": true,
+            "seconds": 50.7916992280002,
+            "model_calls": 5,
+            "tool_calls": 4
+          },
+          {
+            "slot": "grandchild",
+            "case_id": "equipment-893b7477a31a53821d56",
+            "passed": true,
+            "seconds": 49.736303404999944,
+            "model_calls": 5,
+            "tool_calls": 4
+          }
+        ],
+        "births": [
+          {
+            "parent_device_id": "425677be70e3d96640e07c63b09e1ef0324cdbe6071848ffae7f15c069ae300c",
+            "child_device_id": "511dec18405db95ed5f2e91b2db6b4d326730f3da1a0f4d909f7a964076677af",
+            "operation_id": "683b06deafd6472ea1ce159796613509",
+            "decision": {
+              "model_calls": 3,
+              "tool_calls": 2,
+              "choice": {
+                "action": "establish",
+                "evidence_id": "81b1f2e534367c8c6602104804ffad892486fd24da7b98b4f92cb0963930e234",
+                "platform": "linux-x86_64",
+                "device_id": "511dec18405db95ed5f2e91b2db6b4d326730f3da1a0f4d909f7a964076677af",
+                "observed_revision": 2,
+                "release_id": "58ce0559577d796b45e7ab23baacc7e51646ec38c9695612c766fc0696c6924c"
+              },
+              "decision_sha256": "cd94469948f942d098db237a738236c7397def3eb8513cbceeaa3fe6fc81e9de",
+              "receiver_inspection_verified": true
+            },
+            "discovery_records": 4172,
+            "reproduction_transitions": 475,
+            "transfer": {
+              "components": 11,
+              "bytes": 2861108146,
+              "complete_package_received": true,
+              "retained_failed_attempts": []
+            },
+            "model_choice_and_peer_history_reconstructed": true,
+            "external_cloud_and_resource_admission_required": true,
+            "qualification_passed": false
+          },
+          {
+            "parent_device_id": "511dec18405db95ed5f2e91b2db6b4d326730f3da1a0f4d909f7a964076677af",
+            "child_device_id": "c469dc3cfc01febd81535f117c3fc1ca19077c65dfd96873b697adb5af769b13",
+            "operation_id": "4d9f1f6c6e784d8f829b2c1cca5dfeae",
+            "decision": {
+              "model_calls": 3,
+              "tool_calls": 2,
+              "choice": {
+                "action": "establish",
+                "evidence_id": "151513b29d9a37b2115287e789bf704b9b9a136c875ed68f8c6ccb13a1c41493",
+                "platform": "linux-x86_64",
+                "device_id": "c469dc3cfc01febd81535f117c3fc1ca19077c65dfd96873b697adb5af769b13",
+                "observed_revision": 2,
+                "release_id": "58ce0559577d796b45e7ab23baacc7e51646ec38c9695612c766fc0696c6924c"
+              },
+              "decision_sha256": "27a439f9d149cfe3a364445bea713a3348d64737402bb854542e5c47f9f48360",
+              "receiver_inspection_verified": true
+            },
+            "discovery_records": 3960,
+            "reproduction_transitions": 396,
+            "transfer": {
+              "components": 11,
+              "bytes": 2861108146,
+              "complete_package_received": true,
+              "retained_failed_attempts": []
+            },
+            "model_choice_and_peer_history_reconstructed": true,
+            "external_cloud_and_resource_admission_required": true,
+            "qualification_passed": false
+          }
+        ],
+        "validation_failure": null,
+        "successful_tasks": 15,
+        "planned_tasks": 15,
+        "recorded_diagnostic_cases": 15,
+        "unrecorded_planned_cases": 0,
+        "reconstructed_diagnostic_cases": 15,
+        "reconstructed_failed_tasks": 0,
+        "complete_lineage_reconstructed": true,
+        "median_case_seconds": 50.7916992280002,
+        "diagnostic_model_calls": 75,
+        "largest_reported_application_memory_peak_bytes": 4369199104,
+        "separate_machine_independence_claimed": false
+      }
+    ],
+    "cohosted_native_comparison": true,
+    "qualification_passed": false
+  },
+  "mutations": {
+    "native_births": 6,
+    "valid_controls": 24,
+    "valid_controls_accepted": 24,
+    "invalid_variants": 108,
+    "invalid_variants_rejected": 108,
+    "false_rejections": 0,
+    "false_acceptances": 0
+  },
+  "paired_trained_stock": {
+    "trained_pass__stock_pass": 32,
+    "trained_pass__stock_fail": 8
+  }
+}

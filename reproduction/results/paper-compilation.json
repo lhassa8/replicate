@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-18T13:22:59.622349+00:00",
+  "path": "output/pdf/replicate-whitepaper-20261017.tex",
+  "source_sha256": "f159986fb162ef81083080c9280543cd25f0c01bfe0687aaaaddae05dc34f25b",
+  "kind": "success",
+  "message": "The current source compiled successfully with the desktop editor's compiler.",
+  "bibliography_items": 34,
+  "unresolved_citation_keys": [],
+  "native_timing_rows_match_derived_source": true,
+  "standalone_pdf_exported": false
+}

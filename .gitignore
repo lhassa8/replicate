@@ -1,0 +1,15 @@
+# Local secrets and generated state
+.env
+.env.*
+*token*.txt
+*.pem
+*.key
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+
+# Large frozen assets and evidence belong in the complete Zenodo archive.
+reproduction/assets/
+reproduction/evidence/
+*.gguf

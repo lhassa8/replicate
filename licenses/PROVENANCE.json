@@ -1,0 +1,24 @@
+{
+  "texts": [
+    {
+      "file": "licenses/Apache-2.0.txt",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "licenses/CC-BY-4.0.txt",
+      "url": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    }
+  ],
+  "canonical_cc_license": "https://creativecommons.org/licenses/by/4.0/legalcode",
+  "prepared_for_author_review": false,
+  "author_confirmation_required_before_publication": false,
+  "author_selected_licenses": {
+    "original_code": "Apache-2.0",
+    "paper_and_authored_data": "CC-BY-4.0"
+  },
+  "selection_recorded_at": "2026-10-18T13:42:59.491776+00:00"
+}

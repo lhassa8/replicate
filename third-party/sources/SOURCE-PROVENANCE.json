@@ -1,0 +1,113 @@
+{
+  "schema": "replicate-corresponding-source-downloads-v1",
+  "records": [
+    {
+      "name": "libxcrypt_4.4.36.orig.tar.xz",
+      "bytes": 392732,
+      "sha256": "7b7abbc89f13f5194211aa6861ed954e4fa3a210a4cb64f7e13dc8cf413e7f2a",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/libx/libxcrypt/libxcrypt_4.4.36.orig.tar.xz",
+      "expected_bytes": 392732,
+      "expected_sha256": "7b7abbc89f13f5194211aa6861ed954e4fa3a210a4cb64f7e13dc8cf413e7f2a",
+      "identity_authority": "https://archive.ubuntu.com/ubuntu/pool/main/libx/libxcrypt/libxcrypt_4.4.36-4build1.dsc",
+      "matches_pinned_digest": true,
+      "packaged_path": "third-party/sources/libxcrypt_4.4.36.orig.tar.xz"
+    },
+    {
+      "name": "gcc-14_14.2.0-4ubuntu2~24.04.1.debian.tar.xz",
+      "bytes": 1950432,
+      "sha256": "cfece214c2fb790ef5f3baffb9a53e40618e7ae12d053610b251e94d77d08ade",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/g/gcc-14/gcc-14_14.2.0-4ubuntu2~24.04.1.debian.tar.xz",
+      "expected_bytes": 1950432,
+      "expected_sha256": "cfece214c2fb790ef5f3baffb9a53e40618e7ae12d053610b251e94d77d08ade",
+      "identity_authority": "https://archive.ubuntu.com/ubuntu/pool/main/g/gcc-14/gcc-14_14.2.0-4ubuntu2~24.04.1.dsc",
+      "matches_pinned_digest": true,
+      "packaged_path": "third-party/sources/gcc-14_14.2.0-4ubuntu2~24.04.1.debian.tar.xz"
+    },
+    {
+      "name": "libxcrypt_4.4.36-4build1.debian.tar.xz",
+      "bytes": 8356,
+      "sha256": "b75925e5d2c40abab99f8078c40f2a666125067b080466a38eb670730188ca4a",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/libx/libxcrypt/libxcrypt_4.4.36-4build1.debian.tar.xz",
+      "expected_bytes": 8356,
+      "expected_sha256": "b75925e5d2c40abab99f8078c40f2a666125067b080466a38eb670730188ca4a",
+      "identity_authority": "https://archive.ubuntu.com/ubuntu/pool/main/libx/libxcrypt/libxcrypt_4.4.36-4build1.dsc",
+      "matches_pinned_digest": true,
+      "packaged_path": "third-party/sources/libxcrypt_4.4.36-4build1.debian.tar.xz"
+    },
+    {
+      "name": "gcc-14_14.2.0.orig.tar.gz",
+      "bytes": 97158172,
+      "sha256": "768c314c11eeab56ccebb91eb42ec4a41122fa94f0d83400126401942622197b",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/g/gcc-14/gcc-14_14.2.0.orig.tar.gz",
+      "expected_bytes": 97158172,
+      "expected_sha256": "768c314c11eeab56ccebb91eb42ec4a41122fa94f0d83400126401942622197b",
+      "identity_authority": "https://archive.ubuntu.com/ubuntu/pool/main/g/gcc-14/gcc-14_14.2.0-4ubuntu2~24.04.1.dsc",
+      "matches_pinned_digest": true,
+      "packaged_path": "third-party/sources/gcc-14_14.2.0.orig.tar.gz"
+    },
+    {
+      "name": "zlib-ng-2.2.4.tar.gz",
+      "url": "https://github.com/python/cpython-source-deps/archive/refs/tags/zlib-ng-2.2.4.tar.gz",
+      "expected_bytes": 2415819,
+      "expected_sha256": "00bbd88709bc416cb96160ab61d3e1c8f76e106799af7328d0fe434dc7dd5004",
+      "identity_authority": "python-build-standalone 4bb01f09aaf362c71e891be4a41cb6d6ddf830b3 pythonbuild/downloads.py",
+      "component": "zlib-ng",
+      "bytes": 2415819,
+      "sha256": "00bbd88709bc416cb96160ab61d3e1c8f76e106799af7328d0fe434dc7dd5004",
+      "matches_pinned_digest": true,
+      "packaged_path": "third-party/sources/zlib-ng-2.2.4.tar.gz"
+    },
+    {
+      "name": "python-build-standalone-4bb01f09aaf362c71e891be4a41cb6d6ddf830b3.tar.gz",
+      "url": "https://codeload.github.com/astral-sh/python-build-standalone/tar.gz/4bb01f09aaf362c71e891be4a41cb6d6ddf830b3",
+      "expected_bytes": null,
+      "expected_sha256": null,
+      "identity_authority": "Release target_commitish in preserved GitHub metadata",
+      "component": "python-build-definitions",
+      "bytes": 442043,
+      "sha256": "6f1a6b630d82cbd2fd49d7aab5636ec352f9b515f23bda74004e8fd3a33ac0b4",
+      "matches_pinned_digest": false,
+      "packaged_path": "third-party/sources/python-build-standalone-4bb01f09aaf362c71e891be4a41cb6d6ddf830b3.tar.gz",
+      "verification": "Exact upstream release commit; newly recorded archive hash, not a prior digest pin"
+    },
+    {
+      "name": "Python-3.12.14.tar.xz",
+      "url": "https://www.python.org/ftp/python/3.12.14/Python-3.12.14.tar.xz",
+      "expected_bytes": 20820300,
+      "expected_sha256": "5c8462af5790baf43a321a1559dbe0db06d1be4300fb85fb53c40060668e548a",
+      "identity_authority": "python-build-standalone 4bb01f09aaf362c71e891be4a41cb6d6ddf830b3 pythonbuild/downloads.py",
+      "component": "cpython-3.12",
+      "bytes": 20820300,
+      "sha256": "5c8462af5790baf43a321a1559dbe0db06d1be4300fb85fb53c40060668e548a",
+      "matches_pinned_digest": true,
+      "packaged_path": "third-party/sources/Python-3.12.14.tar.xz"
+    },
+    {
+      "name": "db-6.0.19.tar.gz",
+      "url": "https://ftp.osuosl.org/pub/blfs/conglomeration/db/db-6.0.19.tar.gz",
+      "expected_bytes": 36541923,
+      "expected_sha256": "2917c28f60903908c2ca4587ded1363b812c4e830a5326aaa77c9879d13ae18e",
+      "identity_authority": "python-build-standalone 4bb01f09aaf362c71e891be4a41cb6d6ddf830b3 pythonbuild/downloads.py",
+      "component": "bdb",
+      "bytes": 36541923,
+      "sha256": "2917c28f60903908c2ca4587ded1363b812c4e830a5326aaa77c9879d13ae18e",
+      "matches_pinned_digest": true,
+      "packaged_path": "third-party/sources/db-6.0.19.tar.gz"
+    },
+    {
+      "name": "llama.cpp-4f31eedb0ccf546b7e8d6bb243b170f12522f54d.tar.gz",
+      "url": "https://codeload.github.com/ggml-org/llama.cpp/tar.gz/4f31eedb0ccf546b7e8d6bb243b170f12522f54d",
+      "bytes": 35097371,
+      "sha256": "537e725e64f1457874a8d9d984575b203471e1b0a476ad5eee481b057fc0df54",
+      "expected_sha256": "537e725e64f1457874a8d9d984575b203471e1b0a476ad5eee481b057fc0df54",
+      "expected_bytes": 35097371,
+      "matches_pinned_digest": true,
+      "identity_authority": "configs/runtime.json",
+      "component": "llama.cpp b9850 source",
+      "copied_from_existing_verified_local_archive": true,
+      "packaged_path": "third-party/sources/llama.cpp-4f31eedb0ccf546b7e8d6bb243b170f12522f54d.tar.gz"
+    }
+  ],
+  "failures": [],
+  "frozen_runtime_modified": false
+}
